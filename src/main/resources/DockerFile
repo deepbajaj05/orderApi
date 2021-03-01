@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk-alpine
+COPY order-0.0.1-SNAPSHOT.jar app.jar
+COPY db.sql /docker-entrypoint-initdb.d/
+ENTRYPOINT ["java","-jar","/app.jar"]
